@@ -1,8 +1,8 @@
 # react-villa-review-app
 
-#Quick Start
+# Quick Start
 npm install
 
-#run build
+# run build
 npm start
 
