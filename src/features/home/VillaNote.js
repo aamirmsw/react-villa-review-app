@@ -40,7 +40,6 @@ export class VillaNote extends Component {
     const {
       villaName = '',
       pinCode = '',
-      ownerName = '',
       surroundingArea = {},
       constructionQuality = {},
       villaDecor = {},

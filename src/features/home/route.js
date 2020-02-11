@@ -1,5 +1,5 @@
 import {
-  DefaultPage,
+  // DefaultPage,
   VillaNote,
 } from './';
 
