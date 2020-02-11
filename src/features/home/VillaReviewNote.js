@@ -9,6 +9,8 @@ import Button from '@material-ui/core/Button';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import VillaReview from './VillaReview';
+import moment from "moment";
+moment.locale('en-gb');
 
 export class VillaReviewNote extends Component {
   static propTypes = {
@@ -47,7 +49,9 @@ export class VillaReviewNote extends Component {
               Date of visit
             </Typography>
             <Typography variant="subtitle1" gutterBottom classes={{ root: classes.subTitle }}>
-              {villaReview.visitDate}
+              {
+                moment(new Date(villaReview.visitDate)).format('DD-MM-YYYY')
+              }
             </Typography>
 
             <Typography variant="h6" component="h6" classes={{ root: classes.title }}>
@@ -106,7 +110,6 @@ export class VillaReviewNote extends Component {
     const { home = {} } = this.props;
     const { villaReview } = home;
     const selectionData = { ...villaReview[key] };
-    console.log(selectionData);
     if (selectionData['highlightedReview'] && selectionData['highlightedReview'].length > 0) {
       selectionData['highlightedReview'].push(data);
     } else {
@@ -115,7 +118,6 @@ export class VillaReviewNote extends Component {
     }
 
     villaReview[key] = selectionData;
-    console.log(villaReview);
     saveVillaReview(villaReview);
   }
 }

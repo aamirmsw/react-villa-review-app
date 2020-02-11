@@ -16,7 +16,6 @@ export function reducer(state, action) {
   switch (action.type) {
 
     case SAVE_VILLA_REVIEW:
-      console.log('aa', action.data);
       return {
         ...state,
         villaReview: action.data,
